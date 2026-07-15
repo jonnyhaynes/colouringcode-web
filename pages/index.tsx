@@ -8,7 +8,9 @@ const Home: NextPage = () => {
   const date = new Date().getFullYear();
 
   return (
-    <div className="h-screen flex flex-col text-white">
+    <div className="h-screen flex flex-col text-white relative">
+      <div className="clouds" aria-hidden="true" />
+
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,21 +40,21 @@ const Home: NextPage = () => {
         </Script>
       </Head>
 
-      <header className="flex-shrink-0 w-full max-w-screen-xl mx-auto">
+      <header className="content flex-shrink-0 w-full max-w-screen-xl mx-auto">
             <nav className="grid grid-cols-1 md:grid-cols-4 p-10 text-base lg:text-xl">
                 <a href="tel:+447460843016" className="md:col-start-3 md:text-right">+44 (0) 7460 843016</a>
                 <a href="mailto:team@colouringcode.com" className="md:text-right">team@colouringcode.com</a>
             </nav>
         </header>
 
-        <main className="flex-grow flex-shrink-0 w-full max-w-screen-xl flex flex-row justify-center content-center flex-wrap mx-auto">
+        <main className="content flex-grow flex-shrink-0 w-full max-w-screen-xl flex flex-row justify-center content-center flex-wrap mx-auto">
             <section className="w-full px-10">
                 <h1 className="text-6xl md:text-8xl font-bold">Want more?</h1>
                 <p className="text-xl mb-10">Award-winning pixel-crafting for the digital world.</p>
             </section>
         </main>
 
-        <footer className="flex-shrink-0 w-full max-w-screen-xl mx-auto">
+        <footer className="content flex-shrink-0 w-full max-w-screen-xl mx-auto">
             <section className="p-10 text-sm">
                 <p>&copy; { date } Colouring Code // Made in Rotherham // Powered by <a href="https://nextjs.org/">Next.js</a> and <a href="https://vercel.com">Vercel</a>.</p>
             </section>
