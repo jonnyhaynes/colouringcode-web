@@ -49,9 +49,9 @@ const Home: NextPage = () => {
         </header>
 
         <main className="content flex-grow flex-shrink-0 w-full max-w-screen-xl flex flex-row justify-center content-center flex-wrap mx-auto">
-            <section className="w-full px-10">
+            <section className="w-full px-10 max-w-2xl">
                 <h1 className="text-6xl md:text-8xl font-bold">Want more?</h1>
-                <p className="text-xl mb-10">Award-winning pixel-crafting for the digital world.</p>
+                <p className="text-xl mb-10 max-w-prose">Award-winning pixel-crafting for the digital world.</p>
             </section>
         </main>
 
