@@ -75,7 +75,7 @@ team works to; it names no client and claims no endorsement.)*
 ### Contact CTA
 
 > Got something to build? **team@colouringcode.com** · **+44 (0) 7460 843016**
-> Forged in ⟨actual location — town/city⟩, Yorkshire.
+> Forged in Rotherham, Yorkshire.
 
 ---
 
@@ -94,7 +94,7 @@ Each entry: **problem → approach → outcome → stack.**
 > One studio, seven disciplines, one club.
 >
 > **Outcome:** membership up every year for five years running.
-> **Stack:** ⟨site stack⟩
+> **Stack:** Astro + React, Tailwind, Sanity CMS, Vercel.
 
 **Meliora**
 
@@ -117,15 +117,15 @@ Each entry: **problem → approach → outcome → stack.**
 > Live at **skillswap.colouringcode.com**.
 >
 > **Scope:** a working prototype — concept, brand and build.
-> **Stack:** ⟨SkillSwap stack — server-rendered⟩
+> **Stack:** React + React Router, Tailwind, Supabase (Postgres), Vercel.
 
 ### Sector descriptors (range, not names)
 
-> **⟨N⟩ organisations. Three people.**
+> **Nine organisations. Three people.**
 >
 > Before Colouring Code, members of our team designed and built for:
 >
-> ⟨confirmed descriptor list — draft below, each to be confirmed, count verified⟩
+> ⟨the nine descriptors below, set as a clean list⟩
 
 Draft list (from the plan, **all to be confirmed by Jonny**):
 A global graphics-chip designer · a UK police force · one of Britain's biggest shopping
@@ -194,7 +194,7 @@ attribution rule. Jonny confirmed 2026-09-11. It stays.)*
 > **team@colouringcode.com**
 > **+44 (0) 7460 843016**
 >
-> Forged in ⟨actual location — town/city⟩, Yorkshire.
+> Forged in Rotherham, Yorkshire.
 
 ---
 
@@ -220,7 +220,7 @@ column; anything still `⟨…⟩` stays out of the built pages.
 | "Survives clinical review, accessibility audits, police procurement" | Home | The engagements themselves (no endorsement claimed) | **OK** — describes the bar |
 | Sitwell CC — full brief across 7 disciplines; membership up every year for 5 years | Home, Work | Colouring Code's own work (Jonny confirmed 2026-09-11) | **OK** |
 | Meliora — ongoing technical advice; client owns its IP | Home, Work | Colouring Code's own work (Jonny confirmed 2026-09-11) | **OK** |
-| "⟨N⟩ organisations" descriptor count | Work | Must equal the final confirmed descriptor list (now 9 after two removals) | Confirm count |
+| "Nine organisations" descriptor count | Work | Matches the nine-item confirmed list | **OK** |
 | E-commerce as a service | Studio | Delivered elsewhere; described, not named (Jonny confirmed 2026-09-11) | **OK** |
 
 **Removed 2026-09-11:** app-downloads claim (no figure to back), awards (they were for work
@@ -230,17 +230,12 @@ completed elsewhere — attribution unclear, so cut), and every NHS reference (t
 
 ## Open placeholders (what's still outstanding)
 
-Most of the earlier gaps are now closed (2026-09-11). What's left:
+As of 2026-09-11, one gap left:
 
 1. **SkillSwap build dates** — confirm the "five days" figure so the line is defensible.
-2. **Sitwell site stack** and **SkillSwap stack** — for the `→ stack` line on each `/work` entry.
-3. **Sector descriptor list** — confirm the remaining **nine** are each accurate, and flag any
-   under NDA. Count is now nine after removing the NHS and packaging lines.
-4. **Actual location** — the town/city to sit before "Yorkshire" on Home and `/contact`.
-5. **"Clinical review" line — decide.** You asked to remove every NHS reference. The line
-   *"survives clinical review, accessibility audits and police procurement"* names no client,
-   but "clinical review" still points at healthcare work. Keep it (it's non-identifying), or
-   swap "clinical review" for something like "regulated-sector sign-off"? **Your call.**
 
-**Resolved and removed:** app-downloads claim, awards, all NHS references, the packaging
-descriptor. E-commerce stays (backed by unnamed prior work). "50 years combined" confirmed.
+**Resolved:** stacks filled from the real repos (Sitwell: Astro + React, Tailwind, Sanity,
+Vercel · SkillSwap: React + React Router, Tailwind, Supabase, Vercel). Location = **Rotherham**.
+Sector list confirmed at **nine**. "Clinical review" line **kept** (names no client). Removed:
+app-downloads, awards, all NHS references, packaging descriptor. E-commerce stays. "50 years
+combined" confirmed.
