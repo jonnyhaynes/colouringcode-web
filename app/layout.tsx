@@ -21,8 +21,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Colouring Code',
-  description:
-    'Colouring Code — a Yorkshire digital studio crafting websites, apps and brands.',
+  description: 'A digital studio forged in Yorkshire. Websites, apps and brands.',
   applicationName: 'Colouring Code',
   manifest: '/site.webmanifest',
   icons: {
