@@ -1,0 +1,31 @@
+name: Preview audit (axe + Lighthouse)
+
+# Vercel reports each deployment back to GitHub via its integration, firing a
+# `deployment_status` event with the deploy URL in `target_url`. We run the
+# accessibility and Lighthouse gates against the live Preview deployment, so
+# they exercise the real deployed environment (valid certs, real analytics).
+on:
+  deployment_status: {}
+
+jobs:
+  audit:
+    # Preview deploys only, and only once the deploy has succeeded.
+    if: >
+      github.event.deployment_status.environment == 'Preview' &&
+      github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    env:
+      BASE_URL: ${{ github.event.deployment_status.target_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+      - name: Accessibility (axe) against preview
+        run: npm run test:e2e
+      - name: Lighthouse against preview
+        run: npx lhci autorun --collect.url="$BASE_URL"

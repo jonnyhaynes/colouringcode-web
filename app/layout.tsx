@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Big_Shoulders } from 'next/font/google';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 
 // Self-hosted at build time by next/font — no runtime request to Google.
@@ -19,6 +21,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Colouring Code',
+  description: 'A digital studio forged in Yorkshire. Websites, apps and brands.',
   applicationName: 'Colouring Code',
   manifest: '/site.webmanifest',
   icons: {
@@ -54,7 +57,11 @@ export default function RootLayout({
             gtag('config', 'G-SMKSXYK49K');`}
         </Script>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
