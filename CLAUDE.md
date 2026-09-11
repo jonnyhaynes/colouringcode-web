@@ -7,29 +7,36 @@ few lines, move it to its own doc under `/docs` and link it.
 
 ## What this is
 
-Single-page Next.js marketing site for Colouring Code.
+Next.js marketing site for Colouring Code, mid-overhaul from a single holding page
+into a small multi-page agency site. See `docs/plans/site-overhaul.md` for the plan
+and its phases.
 
 See `README.md` for status and `docs/dev-workflow.md` for how we build here.
 
 ## Stack
 
-**Next.js 12 (Pages Router) + React 18, TypeScript, npm.** A single static
-marketing page (`pages/index.tsx`) styled with Tailwind-style utility classes in
+**Next.js 16 (App Router) + React 19, TypeScript, npm.** Pages live under `app/`
+(`app/layout.tsx`, `app/page.tsx`), styled with Tailwind-style utility classes in
 `styles/app.css`; deployed on Vercel. Strict TypeScript (avoid `any`). No test
 suite is set up yet; lint with ESLint (`npm run lint`) and type-check with
 `tsc --noEmit`.
+
+> **In flight (Phase 0):** `styles/app.css` is still a hand-committed Tailwind
+> snapshot, not a real build — PR 2 replaces it with a Tailwind 4 build. TypeScript is
+> pinned to 6.x, not 7, because typescript-eslint does not yet support TS 7
+> (typescript-eslint#10940).
 
 ## Load-bearing principles
 
 These shape the code. Don't change them without a deliberate, flagged decision.
 
-- **It's a static marketing site.** No backend, no database, no auth. The one API
-  route (`pages/api/hello.ts`) is scaffolding from `create-next-app`, not a
-  contract anything depends on.
-- **The page must stay fast and self-contained.** No heavy client-side frameworks or
-  runtime data fetching for what is essentially one screen of content.
-- **Contact details and analytics IDs in `pages/index.tsx` are real and live** (phone,
-  email, GA tag). Don't alter or invent them.
+- **It's a static marketing site.** No backend, no database, no auth. No API routes —
+  the `create-next-app` scaffolding (`pages/api/hello.ts`) was removed in Phase 0.
+- **The site must stay fast and self-contained.** No runtime data fetching. Client-side
+  JS is governed by a measured budget set in Phase 1 and enforced in CI, per the plan —
+  not a blanket prohibition.
+- **Contact details and analytics IDs in `app/` are real and live** (phone, email,
+  GA tag `G-SMKSXYK49K`). Don't alter or invent them.
 
 ## Scope boundaries
 
