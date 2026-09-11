@@ -23,7 +23,7 @@ export default function Home() {
 
       <footer className="content flex-shrink-0 w-full max-w-screen-xl mx-auto">
         <section className="p-10 text-sm">
-          <p>&copy; 2010 - { date } {'//'} Forged in Yorkshire <YorkshireRose /> using <a href="https://nextjs.org/">Next.js</a>, <a href="https://vercel.com">Vercel</a> &amp; <a href="https://claude.com/claude-code">Claude</a>.</p>
+          <p>&copy; 2010 - { date } {'//'} Forged in Yorkshire <YorkshireRose /> using <a href="https://nextjs.org/">Next.js</a>, <a href="https://vercel.com">Vercel</a> &amp; AI.</p>
         </section>
       </footer>
     </div>
