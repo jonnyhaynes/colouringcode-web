@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* Match the legacy snapshot's default sans stack so body copy is byte-identical
+   to the pre-build site (Tailwind v4 ships a different default --font-sans). */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* --- Bespoke rules ported verbatim from styles/app.css (the old snapshot) --- */
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.55)),
+    url(/img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.clouds {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.018' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.2 -0.62'/%3E%3C/filter%3E%3Crect width='1200' height='600' filter='url(%23c)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 1200px 600px;
+  opacity: 0.25;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 60%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 60%);
+  -webkit-animation: cloud-drift 120s linear infinite;
+  animation: cloud-drift 120s linear infinite;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Legacy snapshot applied Big Shoulders Display to every h1; keep that,
+   now sourced from the self-hosted next/font variable. */
+h1 {
+  font-family: var(--font-big-shoulders), sans-serif;
+}
+
+@-webkit-keyframes cloud-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1200px 0;
+  }
+}
+
+@keyframes cloud-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1200px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clouds {
+    -webkit-animation: none;
+    animation: none;
+  }
+}
+
+a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+  border-radius: 2px;
+}

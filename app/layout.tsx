@@ -1,6 +1,17 @@
 import type { Metadata, Viewport } from 'next';
+import { Big_Shoulders } from 'next/font/google';
 import Script from 'next/script';
-import '../styles/app.css';
+import './globals.css';
+
+// Self-hosted at build time by next/font — no runtime request to Google.
+// Google folded the old "Big Shoulders Display" family into "Big Shoulders";
+// same typeface the old site's Google Fonts <link> resolved to.
+const bigShoulders = Big_Shoulders({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-big-shoulders',
+});
 
 export const viewport: Viewport = {
   themeColor: '#ffffff',
@@ -32,13 +43,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={bigShoulders.variable}>
       <head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-SMKSXYK49K" />
         <Script id="gtag-init">
           {` window.dataLayer = window.dataLayer || [];
